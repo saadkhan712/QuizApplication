@@ -1,0 +1,205 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main Container */
+#main-body {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+    margin-bottom: 20px;
+}
+
+/* Neon Button */
+.neon-button {
+    background: none;
+    border: 2px solid #00eaff;
+    color: #00eaff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 234, 255, 0.2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.neon-button:hover::before {
+    transform: scaleX(1);
+}
+
+.neon-button:hover {
+    background: #00eaff;
+    color: #0f172a;
+    box-shadow: 0px 0px 15px #00eaff;
+}
+
+/* Question Container */
+.question-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+}
+
+.question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Option Container */
+.option-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.option:hover {
+    background: rgba(0, 234, 255, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 234, 255, 0.5);
+}
+
+.option-id {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00eaff;
+    margin-right: 10px;
+}
+
+.option-sentence {
+    font-size: 1.1rem;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Score and Progress */
+#user-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+#Score h3, #question-progress h3 {
+    font-size: 1.2rem;
+    color: #00eaff;
+}
+
+#current-score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fffa65;
+}
+
+/* Progress Bar */
+#progress {
+    width: 100px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#inner-progress {
+    width: 10%;
+    height: 100%;
+    background: #00eaff;
+    transition: width 0.3s ease-in-out;
+}
+
+/* End Screen */
+#End {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#final-score {
+    font-size: 2rem;
+    color: #fffa65;
+}
+
+#restart, #home {
+    background: none;
+    border: 2px solid #fffa65;
+    color: #fffa65;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+#restart:hover, #home:hover {
+    background: #fffa65;
+    color: #0f172a;
+    box-shadow: 0px 0px 15px #fffa65;
+}
